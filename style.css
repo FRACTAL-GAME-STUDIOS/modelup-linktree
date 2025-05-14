@@ -29,14 +29,23 @@ body {
     
 
 }
-#profilePicture,
-#profilePicture img {
+
+header{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
-  -webkit-tap-highlight-color: transparent;
+    width: 30%;
+    background-image: url('https://i.imgur.com/2v0Xk4h.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
+
+header img {
+    width: 100%;
+}
+
 .roblox-logo {
   width: 1em;
   height: 1em;
@@ -128,16 +137,12 @@ body {
 
 
 @media only screen and (max-width: 768px) {
-  #profilePicture,
-  #profilePicture img {
-    width: 80%;        
-  }
+   header {
+    width: 100%;
+   }
 }
 
 
 @media only screen and (max-width: 480px) {
-  #profilePicture,
-  #profilePicture img {
-    width: 90%;        
-  }
+  
 }
