@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
 :root {
   --bgColor: #7a0867;
   --bgColor2: #090a0f;
-  --accentColor: #FFF;
-  --font: 'Karla', sans-serif;
-  --delay: .3s;
+  --accentColor: #fff;
+  --font: "Karla", sans-serif;
+  --delay: 0.3s;
 }
 body {
   margin: 0;
@@ -12,37 +12,35 @@ body {
   min-height: 100vh;
   width: 100vw;
   font-family: var(--font);
-    background: radial-gradient(
-        ellipse at bottom,
-        var(--bgColor) 0%,
-        var(--bgColor2) 100%
-    );
+  background: radial-gradient(
+    ellipse at bottom,
+    var(--bgColor) 0%,
+    var(--bgColor2) 100%
+  );
   animation: 1s ease-out var(--delay) 1 transitionAnimation;
   animation-fill-mode: forwards;
   display: flex;
   flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
-    
-
 }
 
-header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 header img {
-    width: 100%;
+  width: 100%;
 }
 
 .roblox-logo {
@@ -74,13 +72,12 @@ header img {
   margin-top: 2em;
   flex-direction: column;
   justify-content: center;
-    align-items: center;
+  align-items: center;
   gap: 1em;
   width: 90%;
-
 }
 .link {
-    width: 50%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +89,7 @@ header img {
   text-align: center;
   padding: 10px;
   text-decoration: none;
-  transition: all .25s cubic-bezier(.08, .59, .29, .99);
+  transition: all 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99);
   -webkit-tap-highlight-color: transparent;
 }
 @media (hover: hover) {
@@ -133,15 +130,25 @@ header img {
   }
 }
 
-
-
 @media only screen and (max-width: 768px) {
-   header {
+  header {
     width: 100%;
-   }
+  }
 }
 
-
 @media only screen and (max-width: 480px) {
-  
+}
+
+.link {
+  color: var(--accentColor);
+  transition: color 0.25s ease;
+}
+
+.link:hover {
+  color: var(--bgColor);
+}
+
+.link i {
+  font-size: 1.2rem;
+  vertical-align: middle;
 }

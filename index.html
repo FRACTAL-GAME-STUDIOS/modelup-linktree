@@ -1,35 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ModelUp!</title>
   <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
- <img src="images/logo.png" alt="ModelUp Roblox">
-</header>
+    <img src="images/logo.png" alt="ModelUp Roblox">
+  </header>
 
   <div id="userName">Join the ModelUp! community!</div>
-  <div id="links">
-    <a class="link" href="https://discord.gg/BZRRjRGxjd" target="_blank">
-      <i class="bi bi-discord"></i> Discord
-    </a>
-    <a class="link" href="https://www.roblox.com/es/communities/35936975/Model-Up-Group" target="_blank">
-      Roblox
-    </a>
-    <a class="link" href="https://www.instagram.com/modelupgame" target="_blank">
-      <i class="bi bi-instagram"></i> Instagram
-    </a>
-    <a class="link" href="https://x.com/modelupgame" target="_blank">
-      <i class="bi bi-twitter-x"></i> Twitter
-    </a>
-    <a class="link" href="https://www.tiktok.com/@modelupgame" target="_blank">
-      <i class="bi bi-tiktok"></i> Tiktok
-    </a>
-  </div>
+  <div id="links"></div>
+
+  <script>
+    const socialLinks = [
+      { name: 'Discord', url: 'https://discord.gg/BZRRjRGxjd', iconClass: 'fa-brands fa-discord' },
+      { name: 'Roblox', url: 'https://www.roblox.com/es/communities/35936975/Model-Up-Group', imgSrc: 'images/roblox.svg' },
+      { name: 'Instagram', url: 'https://www.instagram.com/modelupgame', iconClass: 'fa-brands fa-instagram' },
+      { name: 'Twitter', url: 'https://x.com/modelupgame', iconClass: 'fa-brands fa-x-twitter' },
+      { name: 'Tiktok', url: 'https://www.tiktok.com/@modelupgame', imgSrc: 'images/tiktok.svg' }
+    ];
+
+    const container = document.getElementById('links');
+    if (!container) throw new Error('Container #links not found');
+
+    socialLinks.forEach(link => {
+      if (!link.iconClass && !link.imgSrc) {
+        throw new Error(`Falta iconClass o imgSrc en ${link.name}`);
+      }
+
+      const a = document.createElement('a');
+      a.className = 'link';
+      a.href = link.url;
+      a.target = '_blank';
+
+      if (link.iconClass) {
+        const i = document.createElement('i');
+        i.className = link.iconClass;
+        i.style.marginRight = '0.5em';
+        a.append(i, document.createTextNode(link.name));
+      } else {
+        const span = document.createElement('span');
+        span.className = 'svg-icon';
+        span.style.maskImage = `url(${link.imgSrc})`;
+        span.style.maskRepeat = 'no-repeat';
+        span.style.maskSize = 'contain';
+        span.style.maskPosition = 'center';
+        span.style.backgroundColor = 'currentColor';
+        span.style.display = 'inline-block';
+        span.style.width = '1.5em';
+        span.style.height = '1.5em';
+        span.style.verticalAlign = 'middle';
+        span.style.marginRight = '0.5em';
+        a.append(span, document.createTextNode(link.name));
+      }
+
+      container.appendChild(a);
+    });
+
+  </script>
 </body>
+
 </html>
